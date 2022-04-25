@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction,Integer> {
-    List<Transaction> findByNumber(Integer number);
+    List<Transaction> findByNumber(String number);
     List<Transaction> findByTransactionType(TransactionType transactionType);
 }

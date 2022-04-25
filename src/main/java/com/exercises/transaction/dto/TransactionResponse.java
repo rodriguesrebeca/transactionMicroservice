@@ -19,7 +19,7 @@ public class TransactionResponse {
     private double value;
     private TransactionType transactionType;
     private TransactionStatus transactionStatus;
-    private Integer number;
+    private String number;
     private Integer agency;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;

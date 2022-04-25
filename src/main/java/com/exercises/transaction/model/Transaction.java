@@ -32,7 +32,7 @@ public class Transaction {
     private TransactionStatus transactionStatus;
 
     @Column(name = "number")
-    private Integer number;
+    private String number;
 
     @Column(name = "agency")
     private Integer agency;

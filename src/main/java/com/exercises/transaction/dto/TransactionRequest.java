@@ -17,7 +17,7 @@ public class TransactionRequest {
     @NotNull
     private String transactionType;
     @NotNull
-    private Integer number;
+    private String number;
     @NotNull
     private Integer agency;
 }

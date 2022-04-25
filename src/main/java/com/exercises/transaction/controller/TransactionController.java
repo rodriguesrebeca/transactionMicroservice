@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/transaction")
+@RequestMapping("/transaction")
 public class TransactionController {
 
     @Autowired
@@ -25,12 +25,12 @@ public class TransactionController {
     }
 
     @GetMapping("/{number}")
-    public List<Transaction> getByNumero(@RequestParam Integer number){
+    public List<Transaction> getByNumber(@RequestParam String number){
         return transactionService.getTransactionByNumberAccount(number);
     }
 
     @GetMapping("/{transactiontype}")
-    public List<Transaction> getByTransactionType(@RequestParam TransactionType transactionType){
+    public List<Transaction> getByTransactionType(@PathVariable TransactionType transactionType){
         return transactionService.getTransactionByTransactionType(transactionType);
     }
 
@@ -40,7 +40,7 @@ public class TransactionController {
     }
 
     @GetMapping("/{id}")
-    public Transaction getById(@PathVariable Integer id){
+    public Transaction getById(@RequestParam Integer id){
         return transactionService.getById(id);
     }
 

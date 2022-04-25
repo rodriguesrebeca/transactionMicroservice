@@ -38,7 +38,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public List<Transaction> getTransactionByNumberAccount(Integer number){
+    public List<Transaction> getTransactionByNumberAccount(String number){
         return transactionRepository.findByNumber(number);
 
     }
