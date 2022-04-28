@@ -25,13 +25,13 @@ public class TransactionController {
     }
 
     @GetMapping("/{number}")
-    public List<Transaction> getByNumber(@RequestParam String number){
+    public TransactionResponse getByNumber(@RequestParam String number){
         return transactionService.getTransactionByNumberAccount(number);
     }
 
-    @GetMapping("/{transactiontype}")
-    public List<Transaction> getByTransactionType(@PathVariable TransactionType transactionType){
-        return transactionService.getTransactionByTransactionType(transactionType);
+    @GetMapping("/all/{transaction}")
+    public List<Transaction> getByTransactionType(@RequestParam TransactionType transactiontype){
+        return transactionService.getTransactionByTransactionType(transactiontype);
     }
 
     @GetMapping("/all")

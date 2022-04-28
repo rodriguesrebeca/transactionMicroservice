@@ -8,8 +8,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
 
 @Table(name = "transaction")
 @Entity
@@ -29,6 +29,7 @@ public class Transaction {
     private TransactionType transactionType;
 
     @Column(name = "transaction_status")
+    @Enumerated(EnumType.STRING)
     private TransactionStatus transactionStatus;
 
     @Column(name = "number")
@@ -46,9 +47,10 @@ public class Transaction {
     private LocalDateTime updatedDate;
 
     public Transaction(TransactionRequest transactionRequest) {
-        this.value = transactionRequest.getValue();
-        this.transactionType = TransactionType.valueOf(transactionRequest.getTransactionType());
-        this.number = transactionRequest.getNumber();
-        this.agency = transactionRequest.getAgency();
+        value = transactionRequest.getValue();
+        transactionType = TransactionType.valueOf(transactionRequest.getTransactionType());
+        number = transactionRequest.getNumber();
+        agency = transactionRequest.getAgency();
     }
+
 }

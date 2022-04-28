@@ -12,7 +12,7 @@ public interface TransactionService {
 
     List<Transaction> getAll();
 
-    List<Transaction> getTransactionByNumberAccount(String number);
+    TransactionResponse getTransactionByNumberAccount(String number);
 
     List<Transaction> getTransactionByTransactionType(TransactionType transactionType);
 
